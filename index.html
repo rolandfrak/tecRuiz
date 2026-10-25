@@ -7,7 +7,8 @@
     <title>Roland Ruiz</title>
 
     <link rel="icon" href="assets/imgs/logo.png">
-    <link rel="stylesheet" href="css/style-portada.css">
+    <!--<link rel="stylesheet" href="css/style-portada.css">-->
+    <link rel="stylesheet" href="style-portada.css">
 </head>
 
 <body>
@@ -263,59 +264,166 @@
             </div>
         </div>
 
-        <!-- SKILLS (Estructura Vertical: Imagen -> Nombre -> Nivel) -->
-        <div class="info-block">
-            <h3>Habilidades Técnicas</h3>
-            <div class="grid-layout quad-column">
 
-                <div class="skill-card">
-                    <img src="img/port/html.png" alt="HTML Icon" class="skill-icon">
-                    <h4>HTML</h4>
-                    <br>
-                    <div class="skill-bar">
-                        <!-- Usamos data-width para que el JS anime la barra de manera dinámica -->
-                        <div class="skill-fill avanzado" data-width="75%" data-level="AVANZADO"></div>
-                    </div>
+<!-- ==========================================
+     SECCIÓN: HABILIDADES TÉCNICAS
+=========================================== -->
+<section class="info-block skills-section" id="habilidades">
+
+    <div class="skills-heading">
+        <span class="skills-subtitle">Skilss</span>
+        <h3>Habilidades Técnicas</h3>
+        <p>
+            Explora mis conocimientos y herramientas en diseño
+            gráfico y desarrollo de software.
+        </p>
+    </div>
+
+    <div class="skills-categories">
+
+        <!-- ==================================
+             TARJETA: DISEÑADOR
+        =================================== -->
+        <article class="skill-category-card">
+
+            <div class="category-top">
+                <span class="category-number">01</span>
+                <span class="category-label">ÁREA CREATIVA</span>
+            </div>
+
+            <h4 class="category-title">Diseñador</h4>
+
+            <p class="category-description">
+                Diseño gráfico, identidad visual, edición de imágenes
+                y creación de interfaces digitales.
+            </p>
+
+            <!-- VISTA PREVIA DE LOGOS -->
+            <div class="skill-logos">
+
+                <div class="skill-logo-item">
+                    <img
+                        src="img/a/corel.png"
+                        alt="Corel Draw"
+                        loading="lazy"
+                    >
                 </div>
 
-                <div class="skill-card">
-                    <img src="img/port/css.png" alt="CSS Icon" class="skill-icon">
-                    <h4>CSS</h4>
-                    <br>
-                    <div class="skill-bar">
-                        <div class="skill-fill avanzado" data-width="75%" data-level="AVANZADO"></div>
-                    </div>
+                <div class="skill-logo-item">
+                    <img
+                        src="img/a/Inkaspe.png"
+                        alt="Inkaspe"
+                        loading="lazy"
+                    >
                 </div>
 
-                <div class="skill-card">
-                    <img src="img/port/js.png" alt="JS Icon" class="skill-icon">
-                    <h4>JavaScript</h4>
-                    <br>
-                    <div class="skill-bar">
-                        <div class="skill-fill avanzado" data-width="75%" data-level="AVANZADO"></div>
-                    </div>
+                <div class="skill-logo-item">
+                    <img
+                        src="img/a/filmora.png"
+                        alt="Filmora"
+                        loading="lazy"
+                    >
                 </div>
 
-                <div class="skill-card">
-                    <img src="img/port/php.png" alt="PHP Icon" class="skill-icon">
-                    <h4>PHP</h4>
-                    <br>
-                    <div class="skill-bar">
-                        <div class="skill-fill avanzado" data-width="75%" data-level="AVANZADO"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <img src="img/port/mysql.png" alt="SQL Icon" class="skill-icon">
-                    <h4>MYSQL</h4>
-                    <br>
-                    <div class="skill-bar">
-                        <div class="skill-fill intermedio" data-width="50%" data-level="INTERMEDIO"></div>
-                    </div>
+                <div class="skill-logo-item">
+                    <img
+                        src="img/a/catcut.png"
+                        alt="CatCut"
+                        loading="lazy"
+                    >
                 </div>
 
             </div>
-        </div>
+
+            <div class="category-footer">
+                <span>Herramientas de diseño</span>
+
+                <a
+                    href="pagina-no-encontrada.html"
+                    class="skill-more-btn"
+                    aria-label="Ver más habilidades de diseño"
+                >
+                    Ver más
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </article>
+
+
+        <!-- ==================================
+             TARJETA: DESARROLLADOR
+        =================================== -->
+        <article class="skill-category-card">
+
+            <div class="category-top">
+                <span class="category-number">02</span>
+                <span class="category-label">ÁREA TECNOLÓGICA</span>
+            </div>
+
+            <h4 class="category-title">Desarrollador</h4>
+
+            <p class="category-description">
+                Desarrollo web, programación, creación de sistemas
+                y administración de bases de datos.
+            </p>
+
+            <!-- VISTA PREVIA DE LOGOS -->
+            <div class="skill-logos">
+
+                <div class="skill-logo-item">
+                    <img
+                        src="img/b/html.png"
+                        alt="HTML"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="skill-logo-item">
+                    <img
+                        src="img/b/net.png"
+                        alt="net"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="skill-logo-item">
+                    <img
+                        src="img/b/wordpres.png"
+                        alt="wordpress"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="skill-logo-item">
+                    <img
+                        src="img/b/mysql.png"
+                        alt="MySql"
+                        loading="lazy"
+                    >
+                </div>
+
+            </div>
+
+            <div class="category-footer">
+                <span>Lenguajes y tecnologías</span>
+
+                <a
+                    href="pagina-no-encontrada.html"
+                    class="skill-more-btn"
+                    aria-label="Ver más habilidades de desarrollo"
+                >
+                    Ver más
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
 
         <!-- IDIOMAS -->
         <div class="info-block">
