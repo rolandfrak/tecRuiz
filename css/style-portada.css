@@ -596,118 +596,335 @@ body{
   margin: 0;
 }
 
-/* DISEÑO NUEVO DE SKILL CARDS (Estructura Estricta Vertical 2026) */
-.skill-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 26px;
-  box-shadow: var(--shadow-flat);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* Alineación vertical solicitada */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+
+
+/* ==================================================
+   HABILIDADES TÉCNICAS
+   TARJETAS: DISEÑADOR Y DESARROLLADOR
+================================================== */
+
+/* CONTENEDOR GENERAL */
+.skills-section {
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: #cbd5e1;
+/* ENCABEZADO */
+.skills-heading {
+    margin-bottom: 30px;
 }
 
-/* Imagen arriba */
-.skill-icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  margin-bottom: 16px;
+.skills-subtitle {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    color: var(--primary-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
 }
 
-/* Nombre de Skill al medio */
-.skill-card h4 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin: 0 0 20px 0;
+.skills-heading h3 {
+    margin: 0 0 12px;
+
+    color: var(--text-main);
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
-/* Variación para que Idiomas no quede centrado si no lleva iconos */
-.language-card {
-  align-items: flex-start;
-  text-align: left;
-}
-.language-card h4 {
-  margin-bottom: 16px;
-}
+.skills-heading p {
+    max-width: 600px;
+    margin: 0;
 
-/* MICRO BARRAS DE NIVEL DEBAJO */
-.skill-bar {
-  width: 100%;
-  height: 5px;
-  background: var(--border-subtle);
-  border-radius: 10px;
-  position: relative;
-  margin-top: auto; /* Empuja la barra siempre al fondo */
+    color: var(--text-main);
+    opacity: 0.72;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
-.skill-fill {
-  height: 100%;
-  border-radius: 10px;
-  position: relative;
-  width: 0%; /* Empezará en 0% para que el JS haga la animación de carga */
-  transition: width 1.2s cubic-bezier(0.1, 1, 0.1, 1);
+/* CUADRÍCULA PRINCIPAL */
+.skills-categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
 }
 
-/* Label flotante superior de nivel */
-.skill-fill::after {
-  content: attr(data-level);
-  position: absolute;
-  top: -24px;
-  right: 0;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+/* TARJETA */
+.skill-category-card {
+    min-width: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 28px;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-flat);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-/* Colores de las barras */
-.basico { background: #ef4444; }
-.basico::after { color: #ef4444; }
+.skill-category-card:hover {
+    transform: translateY(-5px);
 
-.intermedio { background: #f59e0b; }
-.intermedio::after { color: #f59e0b; }
-
-.avanzado { background: var(--primary-color); }
-.avanzado::after { color: var(--primary-color); }
-
-.experto { background: #10b981; }
-.experto::after { color: #10b981; }
-
-
-/* RESPONSIVE DESIGN (MEDIA QUERIES) */
-
-@media(max-width: 1024px) {
-  .quad-column { grid-template-columns: repeat(3, 1fr); }
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
 }
 
-@media(max-width: 768px) {
-  .section-title { font-size: 2.1rem; }
-  
-  .triple-column,
-  .quad-column,
-  .dual-column {
-    grid-template-columns: 1fr; /* Una sola tarjeta por fila en móviles */
-  }
-  
-  .skill-card {
-    padding: 22px;
-  }
+/* PARTE SUPERIOR */
+.category-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 24px;
 }
 
+/* NÚMERO DE LA TARJETA */
+.category-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
 
+    color: var(--primary-color);
+    background: var(--border-subtle);
+    border-radius: 11px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ETIQUETA SUPERIOR */
+.category-label {
+    color: var(--text-main);
+    opacity: 0.65;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: right;
+}
+
+/* TÍTULO */
+.category-title {
+    margin: 0 0 12px;
+
+    color: var(--text-main);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+/* DESCRIPCIÓN */
+.category-description {
+    min-height: 76px;
+    margin: 0 0 26px;
+
+    color: var(--text-main);
+    opacity: 0.75;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* LOGOS */
+.skill-logos {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    margin-bottom: 28px;
+}
+
+/* CONTENEDOR DE CADA LOGO */
+.skill-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+    padding: 11px;
+    box-sizing: border-box;
+
+    background: var(--border-subtle);
+    border: 1px solid transparent;
+    border-radius: 14px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.skill-logo-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+/* IMÁGENES DE LOS LOGOS */
+.skill-logo-item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+/* PIE DE TARJETA */
+.category-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    margin-top: auto;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border-subtle);
+}
+
+.category-footer > span {
+    color: var(--text-main);
+    opacity: 0.65;
+
+    font-size: 0.78rem;
+}
+
+/* BOTÓN VER MÁS */
+.skill-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 16px;
+
+    color: var(--primary-color);
+    background: transparent;
+
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.skill-more-btn:hover {
+    color: #fff;
+    background: var(--primary-color);
+}
+
+.skill-more-btn span {
+    font-size: 1.15rem;
+
+    transition: transform 0.25s ease;
+}
+
+.skill-more-btn:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* FOCO DE TECLADO */
+.skill-more-btn:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .skills-categories {
+        gap: 18px;
+    }
+
+    .skill-category-card {
+        padding: 22px;
+    }
+
+    .skill-logo-item {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+/* MÓVILES */
+@media (max-width: 768px) {
+    .skills-categories {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .skills-heading h3 {
+        font-size: 1.55rem;
+    }
+
+    .skill-category-card {
+        padding: 22px;
+    }
+
+    .category-description {
+        min-height: 0;
+    }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 380px) {
+    .skill-category-card {
+        padding: 18px;
+    }
+
+    .skill-logos {
+        gap: 10px;
+    }
+
+    .skill-logo-item {
+        width: 52px;
+        height: 52px;
+        padding: 8px;
+    }
+
+    .category-label {
+        font-size: 0.58rem;
+    }
+}
+
+/* RESPETAR REDUCCIÓN DE MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+    .skill-category-card,
+    .skill-logo-item,
+    .skill-more-btn,
+    .skill-more-btn span {
+        transition: none;
+    }
+
+    .skill-category-card:hover,
+    .skill-logo-item:hover {
+        transform: none;
+    }
+}
 
 /* ==========================================================================
    SECCIÓN DE CONTACTO ULTRA-MODERNA 2026
